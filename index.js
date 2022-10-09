@@ -98,9 +98,11 @@ let para2 = document.getElementById('para2');
 function generate() {
   let arr = [];
   let str = '';
-  let num = prompt('Please enter length of password less than 10 characters');
-  if (!num || num > 10) {
-    num = prompt('Please enter a number less than 10');
+  let num = prompt('Please enter length of password');
+  if (!num) {
+    num = prompt('Please enter a number');
+  } else if (num > 15) {
+    num = prompt('Please enter a number less than 15');
   } else {
     for (let i = 0; i < num; i++) {
       arr.push(characters[Math.floor(Math.random() * characters.length)]);
@@ -111,6 +113,7 @@ function generate() {
 }
 
 function meh() {
+  console.log(1);
   para2.textContent = generate();
   para3.textContent = generate();
 }
