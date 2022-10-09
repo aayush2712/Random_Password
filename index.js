@@ -98,11 +98,16 @@ let para2 = document.getElementById('para2');
 function generate() {
   let arr = [];
   let str = '';
-  for (let i = 0; i < 10; i++) {
-    arr.push(characters[Math.floor(Math.random() * characters.length)]);
+  let num = prompt('Please enter length of password less than 10 characters');
+  if (!num || num > 10) {
+    num = prompt('Please enter a number less than 10');
+  } else {
+    for (let i = 0; i < num; i++) {
+      arr.push(characters[Math.floor(Math.random() * characters.length)]);
+    }
+    str = arr.join('');
+    return str;
   }
-  str = arr.join('');
-  return str;
 }
 
 function meh() {
