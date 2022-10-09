@@ -103,17 +103,15 @@ function generate() {
     num = prompt('Please enter a number');
   } else if (num > 15) {
     num = prompt('Please enter a number less than 15');
-  } else {
-    for (let i = 0; i < num; i++) {
-      arr.push(characters[Math.floor(Math.random() * characters.length)]);
-    }
-    str = arr.join('');
-    return str;
   }
+  for (let i = 0; i < num; i++) {
+    arr.push(characters[Math.floor(Math.random() * characters.length)]);
+  }
+  str = arr.join('');
+  return str;
 }
 
 function meh() {
-  console.log(1);
   para2.textContent = generate();
   para3.textContent = generate();
 }
